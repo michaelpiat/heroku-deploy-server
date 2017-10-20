@@ -1,7 +1,7 @@
 var router = require('express').Router();
 var Recipe = require("../models/Recipe.js");
 var User = require("../models/User.js");
-const env = require('env2')('../.env');
+const env = require('env2')('./.env');
 const sendemail = require('sendemail')
 const email = sendemail.email
 const set_template_directory = sendemail.set_template_directory
@@ -106,6 +106,8 @@ router.post('/sendemail', function(req, res) {
 		  console.log(error);
 		  console.log(' - - - - - - - - - - - - - - - - - - - - - - - - - - - -')
 		})
+
+		res.send("email sent");
 	}
 	
 });
@@ -132,6 +134,8 @@ router.post('/senddbemail', function(req, res) {
 		  console.log(error);
 		  console.log(' - - - - - - - - - - - - - - - - - - - - - - - - - - - -')
 		})
+
+		res.send("email sent");
 	}
 	
 });
